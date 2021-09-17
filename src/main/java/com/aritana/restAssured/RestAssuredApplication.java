@@ -8,6 +8,7 @@ public class RestAssuredApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RestAssuredApplication.class, args);
+
 	}
 
 }

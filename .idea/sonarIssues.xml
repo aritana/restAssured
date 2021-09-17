@@ -8,6 +8,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/aritana/restAssured/RestAssuredApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/aritana/restAssured/TestRestAssured.java">
+          <value>
+            <set />
+          </value>
+        </entry>
       </map>
     </option>
   </component>

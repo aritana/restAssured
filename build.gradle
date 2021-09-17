@@ -14,10 +14,24 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.jayway.restassured:rest-assured:2.9.0'
+	implementation 'com.github.ivanovvlad9626:TestRail-RestAssured:0.5'
+	implementation 'com.jayway.restassured:xml-path:2.9.0'
+	implementation 'com.jayway.restassured:modules:2.9.0'
+	implementation 'com.jayway.restassured:dist-xml-path:2.2.0'
+	implementation 'org.springframework.restdocs:spring-restdocs-restassured:2.0.5.RELEASE'
+	implementation 'commons-io:commons-io:20030203.000550'
+	implementation 'com.thegoate:restassured:0.15.8.202108192327'
+	implementation 'de.quantummaid.quantummaid.integrations:quantummaid-restassured:1.1.1'
+	implementation 'com.jayway.restassured:dist-json-path:2.2.0'
+	implementation 'com.jayway.restassured:dist:2.2.0'
+	implementation 'com.jayway.restassured:rest-assured-common:2.9.0'
+	implementation 'com.jayway.restassured:json-path:2.9.0'
+	implementation 'com.epages:restdocs-api-spec-restassured:0.12.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	// https://mvnrepository.com/artifact/io.rest-assured/rest-assured
-	testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '3.0.0'
+	testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
 
 }
 
