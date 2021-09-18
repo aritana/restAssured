@@ -17,13 +17,19 @@ public class TestRestAssuredTest {
         System.out.println("----------------------------------------------------------------------------");
         System.out.println(response.getBody().asString());
         System.out.println(response.statusCode());
-
         //testando
         Assert.assertTrue("A mensagem deveria ser \"Ola Mundo!\" ",response.getBody().asString().equals("Ola Mundo!"));
         Assert.assertTrue("0 status code deveria ser \"200\" ", response.statusCode()==200);
         Assert.assertEquals(200, response.statusCode());
         ValidatableResponse validation = response.then();
         validation.statusCode(200);
+    }
+
+    @Test
+    public void devoCOnhecerOutrasFormasRestAssured(){
+
+        RestAssured.get("https://restapi.wcaquino.me/ola").then().statusCode(200);
 
     }
+
 }

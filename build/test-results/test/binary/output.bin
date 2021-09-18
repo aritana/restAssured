@@ -1,48 +1,42 @@
-˜23:45:20.947 [Test worker] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager - Get connection for route {s}->https://restapi.wcaquino.me:443
-ƒ23:45:20.989 [Test worker] DEBUG org.apache.http.impl.conn.DefaultClientConnectionOperator - Connecting to restapi.wcaquino.me:443
-x23:45:21.866 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: ignoreCookies
-v23:45:21.868 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-23:45:21.868 [Test worker] DEBUG org.apache.http.client.protocol.RequestTargetAuthentication - Target auth state: UNCHALLENGED
-}23:45:21.869 [Test worker] DEBUG org.apache.http.client.protocol.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
-n23:45:21.869 [Test worker] DEBUG org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
-x23:45:21.870 [Test worker] DEBUG org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /ola HTTP/1.1
-X23:45:21.870 [Test worker] DEBUG org.apache.http.wire -  >> "GET /ola HTTP/1.1[\r][\n]"
-R23:45:21.872 [Test worker] DEBUG org.apache.http.wire -  >> "Accept: */*[\r][\n]"
-`23:45:21.872 [Test worker] DEBUG org.apache.http.wire -  >> "Host: restapi.wcaquino.me[\r][\n]"
-]23:45:21.872 [Test worker] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
-|23:45:21.873 [Test worker] DEBUG org.apache.http.wire -  >> "User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_302)[\r][\n]"
-d23:45:21.873 [Test worker] DEBUG org.apache.http.wire -  >> "Accept-Encoding: gzip,deflate[\r][\n]"
-G23:45:21.873 [Test worker] DEBUG org.apache.http.wire -  >> "[\r][\n]"
-P23:45:21.873 [Test worker] DEBUG org.apache.http.headers - >> GET /ola HTTP/1.1
-J23:45:21.873 [Test worker] DEBUG org.apache.http.headers - >> Accept: */*
-X23:45:21.873 [Test worker] DEBUG org.apache.http.headers - >> Host: restapi.wcaquino.me
-U23:45:21.873 [Test worker] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
-t23:45:21.873 [Test worker] DEBUG org.apache.http.headers - >> User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_302)
-\23:45:21.873 [Test worker] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip,deflate
-V23:45:22.017 [Test worker] DEBUG org.apache.http.wire -  << "HTTP/1.1 200 OK[\r][\n]"
-d23:45:22.019 [Test worker] DEBUG org.apache.http.wire -  << "Server: nginx/1.12.1 (Ubuntu)[\r][\n]"
-j23:45:22.020 [Test worker] DEBUG org.apache.http.wire -  << "Date: Sat, 18 Sep 2021 02:45:21 GMT[\r][\n]"
-n23:45:22.020 [Test worker] DEBUG org.apache.http.wire -  << "Content-Type: text/plain; charset=utf-8[\r][\n]"
-Y23:45:22.020 [Test worker] DEBUG org.apache.http.wire -  << "Content-Length: 10[\r][\n]"
-]23:45:22.021 [Test worker] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
-\23:45:22.021 [Test worker] DEBUG org.apache.http.wire -  << "X-Powered-By: Express[\r][\n]"
-n23:45:22.021 [Test worker] DEBUG org.apache.http.wire -  << "ETag: W/"a-y99v+OqTwinY4BlWPFOKCDg4f1g"[\r][\n]"
-G23:45:22.022 [Test worker] DEBUG org.apache.http.wire -  << "[\r][\n]"
-y23:45:22.023 [Test worker] DEBUG org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
-N23:45:22.024 [Test worker] DEBUG org.apache.http.headers - << HTTP/1.1 200 OK
-\23:45:22.024 [Test worker] DEBUG org.apache.http.headers - << Server: nginx/1.12.1 (Ubuntu)
-b23:45:22.024 [Test worker] DEBUG org.apache.http.headers - << Date: Sat, 18 Sep 2021 02:45:21 GMT
-f23:45:22.024 [Test worker] DEBUG org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
-Q23:45:22.024 [Test worker] DEBUG org.apache.http.headers - << Content-Length: 10
-U23:45:22.024 [Test worker] DEBUG org.apache.http.headers - << Connection: keep-alive
-T23:45:22.024 [Test worker] DEBUG org.apache.http.headers - << X-Powered-By: Express
-f23:45:22.024 [Test worker] DEBUG org.apache.http.headers - << ETag: W/"a-y99v+OqTwinY4BlWPFOKCDg4f1g"
-{23:45:22.034 [Test worker] DEBUG org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
-š23:45:22.068 [Test worker] DEBUG io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder - Parsing response as: text/plain; charset=utf-8
-·23:45:22.069 [Test worker] DEBUG io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder - Parsed data to instance of: class org.apache.http.conn.EofSensorInputStream
-M----------------------------------------------------------------------------
-I23:45:22.160 [Test worker] DEBUG org.apache.http.wire -  << "Ola Mundo!"
-®23:45:22.163 [Test worker] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager - Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@29c7acce
-„23:45:22.172 [Test worker] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager - Connection can be kept alive indefinitely
-Ola Mundo!
-200
+˜23:57:27.925 [Test worker] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager - Get connection for route {s}->https://restapi.wcaquino.me:443
+ƒ23:57:28.032 [Test worker] DEBUG org.apache.http.impl.conn.DefaultClientConnectionOperator - Connecting to restapi.wcaquino.me:443
+x23:57:28.933 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: ignoreCookies
+v23:57:28.938 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+23:57:28.938 [Test worker] DEBUG org.apache.http.client.protocol.RequestTargetAuthentication - Target auth state: UNCHALLENGED
+}23:57:28.940 [Test worker] DEBUG org.apache.http.client.protocol.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+n23:57:28.941 [Test worker] DEBUG org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+x23:57:28.942 [Test worker] DEBUG org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /ola HTTP/1.1
+X23:57:28.943 [Test worker] DEBUG org.apache.http.wire -  >> "GET /ola HTTP/1.1[\r][\n]"
+R23:57:28.944 [Test worker] DEBUG org.apache.http.wire -  >> "Accept: */*[\r][\n]"
+`23:57:28.945 [Test worker] DEBUG org.apache.http.wire -  >> "Host: restapi.wcaquino.me[\r][\n]"
+]23:57:28.945 [Test worker] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
+|23:57:28.945 [Test worker] DEBUG org.apache.http.wire -  >> "User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_302)[\r][\n]"
+d23:57:28.945 [Test worker] DEBUG org.apache.http.wire -  >> "Accept-Encoding: gzip,deflate[\r][\n]"
+G23:57:28.945 [Test worker] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+P23:57:28.946 [Test worker] DEBUG org.apache.http.headers - >> GET /ola HTTP/1.1
+J23:57:28.946 [Test worker] DEBUG org.apache.http.headers - >> Accept: */*
+X23:57:28.946 [Test worker] DEBUG org.apache.http.headers - >> Host: restapi.wcaquino.me
+U23:57:28.946 [Test worker] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
+t23:57:28.946 [Test worker] DEBUG org.apache.http.headers - >> User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_302)
+\23:57:28.947 [Test worker] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip,deflate
+V23:57:29.090 [Test worker] DEBUG org.apache.http.wire -  << "HTTP/1.1 200 OK[\r][\n]"
+d23:57:29.093 [Test worker] DEBUG org.apache.http.wire -  << "Server: nginx/1.12.1 (Ubuntu)[\r][\n]"
+j23:57:29.093 [Test worker] DEBUG org.apache.http.wire -  << "Date: Sat, 18 Sep 2021 02:57:29 GMT[\r][\n]"
+n23:57:29.093 [Test worker] DEBUG org.apache.http.wire -  << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+Y23:57:29.093 [Test worker] DEBUG org.apache.http.wire -  << "Content-Length: 10[\r][\n]"
+]23:57:29.093 [Test worker] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
+\23:57:29.093 [Test worker] DEBUG org.apache.http.wire -  << "X-Powered-By: Express[\r][\n]"
+n23:57:29.094 [Test worker] DEBUG org.apache.http.wire -  << "ETag: W/"a-y99v+OqTwinY4BlWPFOKCDg4f1g"[\r][\n]"
+G23:57:29.094 [Test worker] DEBUG org.apache.http.wire -  << "[\r][\n]"
+y23:57:29.096 [Test worker] DEBUG org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+N23:57:29.096 [Test worker] DEBUG org.apache.http.headers - << HTTP/1.1 200 OK
+\23:57:29.096 [Test worker] DEBUG org.apache.http.headers - << Server: nginx/1.12.1 (Ubuntu)
+b23:57:29.096 [Test worker] DEBUG org.apache.http.headers - << Date: Sat, 18 Sep 2021 02:57:29 GMT
+f23:57:29.096 [Test worker] DEBUG org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+Q23:57:29.097 [Test worker] DEBUG org.apache.http.headers - << Content-Length: 10
+U23:57:29.097 [Test worker] DEBUG org.apache.http.headers - << Connection: keep-alive
+T23:57:29.097 [Test worker] DEBUG org.apache.http.headers - << X-Powered-By: Express
+f23:57:29.097 [Test worker] DEBUG org.apache.http.headers - << ETag: W/"a-y99v+OqTwinY4BlWPFOKCDg4f1g"
+{23:57:29.110 [Test worker] DEBUG org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+š23:57:29.154 [Test worker] DEBUG io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder - Parsing response as: text/plain; charset=utf-8
+·23:57:29.154 [Test worker] DEBUG io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder - Parsed data to instance of: class org.apache.http.conn.EofSensorInputStream
