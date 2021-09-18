@@ -7,13 +7,15 @@ import io.restassured.response.ValidatableResponse;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
+import static io.restassured.RestAssured.*;
+
 
 public class TestRestAssuredTest {
 
     @Test
     public void testeOlaMundo(){
 
-        Response response = RestAssured.request(Method.GET, "https://restapi.wcaquino.me/ola");
+        Response response = request(Method.GET, "https://restapi.wcaquino.me/ola");
         System.out.println("----------------------------------------------------------------------------");
         System.out.println(response.getBody().asString());
         System.out.println(response.statusCode());
@@ -28,8 +30,14 @@ public class TestRestAssuredTest {
     @Test
     public void devoCOnhecerOutrasFormasRestAssured(){
 
-        RestAssured.get("https://restapi.wcaquino.me/ola").then().statusCode(200);
+        get("https://restapi.wcaquino.me/ola").then().statusCode(200);
 
+        ///modo fluente Given When Then
+        given() //pre condicoes
+                .when() //acao de fato
+                    .get("https://restapi.wcaquino.me/ola")
+                .then() //verificacoes
+                    .statusCode(200);
     }
 
 }
