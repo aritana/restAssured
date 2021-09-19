@@ -8,8 +8,7 @@ import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.*;
 
 public class UserJsonTest {
 
@@ -54,5 +53,18 @@ public class UserJsonTest {
                 .then()
                     .statusCode(200)
                     .body("endereco.rua", Matchers.is( "Rua dos bobos"));
+    }
+
+    @Test
+    public void deveVerificarLista(){
+        given()
+                .when()
+                .get("https://restapi.wcaquino.me/users/3")
+                .then()
+                .statusCode(200)
+                .body("filhos", hasSize( 2))
+                .body("filhos[0].name", Matchers.is( "Zezinho"))
+                .body("filhos[0].name", hasItem( "Zezinho"))
+                .body("filhos[0].name", hasItems( "Zezinho","Luizinho"));
     }
 }
