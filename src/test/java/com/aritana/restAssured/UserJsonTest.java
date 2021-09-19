@@ -4,6 +4,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.assertj.core.util.Arrays;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
@@ -59,13 +60,13 @@ public class UserJsonTest {
     public void deveVerificarLista(){
         given()
                 .when()
-                .get("https://restapi.wcaquino.me/users/3")
+                    .get("https://restapi.wcaquino.me/users/3")
                 .then()
                 .statusCode(200)
-                .body("filhos", hasSize( 2))
-                .body("filhos[0].name", Matchers.is( "Zezinho"))
-                .body("filhos[0].name", hasItem( "Zezinho"))
-                .body("filhos[0].name", hasItems( "Zezinho","Luizinho"));
+                    .body("filhos", hasSize( 2))
+                    .body("filhos[0].name", Matchers.is( "Zezinho"))
+                    .body("filhos.name", hasItem( "Zezinho"))
+                    .body("filhos.name", hasItems( "Zezinho","Luizinho"));
     }
 
     @Test
@@ -76,5 +77,22 @@ public class UserJsonTest {
                 .then()
                 .statusCode(404)
                 .body("error", is( "Usuário inexistente"));
+    }
+    @Test
+    public void deveVerificarListaNaRaiz(){
+        given()
+                .when()
+                .get("https://restapi.wcaquino.me/users")
+                .then()
+                .statusCode(200)
+                .body("$", hasSize(3));
+//ou
+        String names[] = new String[]{"Zezinho","Luizinho"};
+        given()
+                .when()
+                .get("https://restapi.wcaquino.me/users")
+                .then()
+                .statusCode(200)
+                .body("filhos.name", hasItem( Arrays.asList(names)));
     }
 }
