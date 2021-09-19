@@ -26,6 +26,7 @@ activemq-data
 bin
 build
 build/
+*/build/*
 !/**/src/**/bin
 !/**/src/**/build
 !/**/src/**/build/*

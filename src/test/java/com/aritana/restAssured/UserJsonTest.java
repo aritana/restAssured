@@ -1,6 +1,11 @@
 package com.aritana.restAssured;
 
+import io.restassured.RestAssured;
+import io.restassured.http.Method;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import org.hamcrest.Matchers;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.containsString;
@@ -23,6 +28,22 @@ public class UserJsonTest {
 
     @Test
     public void deveVerificarPrimeiroNivelOutraForma(){
+
+        Response response = request(Method.GET, "https://restapi.wcaquino.me/users/1");
+        Object id = response.path("id");
+
+        //path
+        Assert.assertEquals(new Integer(1),id);
+        Assert.assertEquals("Deveria retornar 1 ",new Integer(1),id);
+        Assert.assertEquals(new Integer(1),response.path("%s","id"));
+
+        //jsonPath
+        JsonPath jpath = new JsonPath(response.asString());
+        Assert.assertEquals(1,jpath.getInt("id"));
+
+        //from
+        int jsonId =JsonPath.from(response.asString()).getInt("id");
+        Assert.assertEquals(1,jsonId);
 
     }
 }
