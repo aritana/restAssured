@@ -8,6 +8,9 @@ import org.assertj.core.util.Arrays;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
@@ -113,10 +116,19 @@ public class UserJsonTest {
                     .body("findAll{it.name.length()>10}.name",hasItems("Maria Joaquina"))
                     .body("name.collect{it.toUpperCase()}",hasItems("MARIA JOAQUINA"))//Opera o upperCase
                     .body("name.findAll{it.startsWith('Maria')}.collect{it.toUpperCase()}",hasItems("MARIA JOAQUINA"))//Opera o upperCase
-                    .body("name.findAll{it.startsWith('Maria')}.collect{it.toUpperCase()}.toArray()",allOf(arrayContaining("MARIA JOAQUINA"),arrayWithSize(1)))//Opera o upperCase
-
-        ;
-
+                    .body("name.findAll{it.startsWith('Maria')}.collect{it.toUpperCase()}.toArray()",allOf(arrayContaining("MARIA JOAQUINA"),arrayWithSize(1)));//Opera o upperCase
+    }
+    @Test
+    public void deveUnirJsonPathComJava() {
+        ArrayList<String> names =
+                given()
+                        .when()
+                        .get("https://restapi.wcaquino.me/users")
+                        .then()
+                        .statusCode(200)
+                        .extract().path("name.findAll{it.startsWith('Maria')}");
+        Assert.assertEquals(1, names.size());
+        Assert.assertTrue(names.get(0).equalsIgnoreCase("maria joaquina"));
 
     }
 }
