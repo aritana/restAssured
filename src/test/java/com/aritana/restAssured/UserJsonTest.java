@@ -67,4 +67,14 @@ public class UserJsonTest {
                 .body("filhos[0].name", hasItem( "Zezinho"))
                 .body("filhos[0].name", hasItems( "Zezinho","Luizinho"));
     }
+
+    @Test
+    public void deveRetornarErroUsuarioInexistente(){
+        given()
+                .when()
+                .get("https://restapi.wcaquino.me/users/4")
+                .then()
+                .statusCode(404)
+                .body("error", is( "Usuário inexistente"));
+    }
 }
