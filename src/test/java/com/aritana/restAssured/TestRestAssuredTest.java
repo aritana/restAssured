@@ -62,6 +62,7 @@ public class TestRestAssuredTest {
 
     @Test
     public void devoValidarBody(){
+
         given()
                 .when()
                     .get("https://restapi.wcaquino.me/ola")
@@ -71,7 +72,6 @@ public class TestRestAssuredTest {
                     .body(Matchers.is("Ola Mundo!"))
                     .body(containsString("Mundo"))
                     .body(is(not(nullValue())));//corpo nao vazio
-
     }
 
 }
