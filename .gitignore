@@ -11,7 +11,7 @@
 .attach_pid*
 .classpath
 .factorypath
-.gradle
+../.gradle
 .idea
 .metadata
 .project
@@ -43,3 +43,4 @@ target
 secrets.yml
 .gradletasknamecache
 .sts4-cache
+.gradle/
