@@ -44,5 +44,7 @@ secrets.yml
 .sts4-cache
 .gradle/
 *.idx
-*.html*.class
+*.html
+*.class
+./build/*
 
