@@ -37,4 +37,35 @@ public class VerbosTest {
                 .body("error", Matchers.is("Name é um atributo obrigatório"));
 
     }
+
+    @Test
+    public void deveAlterarUsuario() {
+
+        given()
+                .log().all() //mostra parametros enviados
+                .contentType("application/json")
+                .body("{\"name\":\"Jiraya da Saudade\",\"age\":200,\"salary\":1234.5678}")
+                .when()
+                .put("https://restapi.wcaquino.me/{entidade}/{userId}","users","1")
+                .then()
+                .log().all()
+                .statusCode(200)
+                .body("id", Matchers.is(1));
+    }
+    @Test
+    public void deveCustomizarUrl() {
+
+        given()
+                .log().all() //mostra parametros enviados
+                .contentType("application/json")
+                .body("{\"name\":\"Jiraya da Saudade\",\"age\":200,\"salary\":1234.5678}")
+                .pathParam("entidade","users")
+                .pathParam("userId",1)
+            .when()
+                .put("https://restapi.wcaquino.me/{entidade}/{userId}","users","1")
+                .then()
+                .log().all()
+                .statusCode(200)
+                .body("id", Matchers.is(1));
+    }
 }
