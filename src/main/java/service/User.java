@@ -1,9 +1,6 @@
 package service;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @ToString
 @Builder
@@ -12,6 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class User {
+    private long id;
     private  String name;
     private Integer age;
     private Double salary;

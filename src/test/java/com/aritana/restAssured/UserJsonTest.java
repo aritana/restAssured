@@ -13,6 +13,7 @@ import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 
 import static io.restassured.RestAssured.*;
@@ -153,7 +154,8 @@ public class UserJsonTest {
                         .get("https://restapi.wcaquino.me/users")
                         .then()
                         .statusCode(200)
-                        .extract().path("name.findAll{it.startsWith('Maria')}");
+                        .extract()
+                        .path("name.findAll{it.startsWith('Maria')}");
         Assert.assertEquals(1, names.size());
         Assert.assertTrue(names.get(0).equalsIgnoreCase("maria joaquina"));
 

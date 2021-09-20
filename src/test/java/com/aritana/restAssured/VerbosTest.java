@@ -3,7 +3,8 @@ package com.aritana.restAssured;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
-import static io.restassured.RestAssured.*;
+
+import static io.restassured.RestAssured.given;
 
 public class VerbosTest {
 
