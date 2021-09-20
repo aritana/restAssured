@@ -68,4 +68,19 @@ public class VerbosTest {
                 .statusCode(200)
                 .body("id", Matchers.is(1));
     }
+
+    @Test
+    public void deveDeletarUsuario() {
+
+        given()
+                .log().all() //mostra parametros enviados
+                .pathParam("entidade","users")
+                .pathParam("userId",1)
+                .when()
+                .delete("https://restapi.wcaquino.me/{entidade}/{userId}","users","1000")
+                .then()
+                .log().all()
+                .statusCode(204);
+
+    }
 }
