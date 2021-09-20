@@ -131,4 +131,16 @@ public class UserJsonTest {
         Assert.assertTrue(names.get(0).equalsIgnoreCase("maria joaquina"));
 
     }
+    @Test
+    public void deveTerAtributosEstaticos() {
+        baseURI = "http://restapi.wcaquino.me";
+        port = 80;
+        basePath="/v2";
+
+        given()
+                .when()
+                    .get("/users")
+                .then()
+                    .statusCode(200);
+    }
 }
