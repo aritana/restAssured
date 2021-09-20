@@ -174,6 +174,7 @@ public class UserJsonTest {
 
         RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
         requestSpecBuilder.log(LogDetail.ALL);
+
         reqSpec = requestSpecBuilder.build();
 
         ResponseSpecBuilder resBuilder = new ResponseSpecBuilder();
