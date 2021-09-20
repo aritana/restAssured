@@ -13,7 +13,6 @@ import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 
 import static io.restassured.RestAssured.*;
