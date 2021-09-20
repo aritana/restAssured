@@ -1,12 +1,18 @@
 package com.aritana.restAssured;
 
 import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.filter.log.LogDetail;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
 import org.assertj.core.util.Arrays;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -16,6 +22,12 @@ import static org.hamcrest.Matchers.*;
 
 public class UserJsonTest {
 
+    @BeforeClass
+    public static void setup() { //executa antes da clase ser criada
+        baseURI = "http://restapi.wcaquino.me";
+        port = 80;
+        basePath = "/v2";
+    }
     @Test
     public void deveVerificarPrimeiroNivel(){
 
@@ -133,14 +145,34 @@ public class UserJsonTest {
     }
     @Test
     public void deveTerAtributosEstaticos() {
-        baseURI = "http://restapi.wcaquino.me";
-        port = 80;
-        basePath="/v2";
-
         given()
                 .when()
                     .get("/users")
                 .then()
                     .statusCode(200);
+    }
+    @Test
+    public void deveTestarUsoRequestResponseSpecification(){
+
+        RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
+        requestSpecBuilder.log(LogDetail.ALL);
+        RequestSpecification requestSpecification = requestSpecBuilder.build();
+
+        ResponseSpecBuilder resBuilder = new ResponseSpecBuilder();
+        resBuilder.expectStatusCode(201);
+        ResponseSpecification responseSpecification = resBuilder.build();
+
+
+        given()
+                .spec(requestSpecification)
+            .when()
+                .get("https://restapi.wcaquino.me/users/3")
+            .then()
+                //.statusCode(200)
+                .spec(responseSpecification)
+                .body("filhos", hasSize( 2))
+                .body("filhos[0].name", Matchers.is( "Zezinho"))
+                .body("filhos.name", hasItem( "Zezinho"))
+                .body("filhos.name", hasItems( "Zezinho","Luizinho"));
     }
 }
