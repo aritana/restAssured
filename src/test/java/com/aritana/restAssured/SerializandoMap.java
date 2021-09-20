@@ -29,4 +29,23 @@ public class SerializandoMap {
                 .log().all()
                 .statusCode(201);
     }
+//    @Test
+//    public void salvarUsuarioUsandoObjeto() {
+//
+//    User user = User.builder()
+//        .name("Usuario via objeto")
+//        .age(25)
+//        .build();
+//
+//        given()
+//                .log().all() //mostra parametros enviados
+//                .contentType("application/json")
+//                .body(user)
+//            .when()
+//                .post("https://restapi.wcaquino.me/users")
+//            .then()
+//                .log().all()
+//                .statusCode(201);
+//    }
+
 }
