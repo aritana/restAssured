@@ -1,6 +1,7 @@
 package com.aritana.restAssured;
 
 import io.restassured.http.ContentType;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -37,5 +38,18 @@ public class SendTestData {
                 .then()
                     .log().all()
                     .contentType(ContentType.HTML);
+    }
+
+    @Test
+    public void deveriaFazerBuscasComHtml(){
+        given()
+                .log().all()
+                .accept(ContentType.HTML)//Oque eu quero aceitar na resposta
+                .when()
+                .get("https://restapi.wcaquino.me/v2/users")
+                .then()
+                .log().all()
+                .contentType(ContentType.HTML)
+                .body("html.body.div.table.tbody.tr.size()", Matchers.is(3));
     }
 }
