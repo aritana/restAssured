@@ -33,4 +33,18 @@ public class UploadArquivos {
                 .statusCode(200)
                 .body("name", Matchers.is("file.pdf"));
     }
+
+    @Test
+    public void NãodeveFazerUploadDeArquivoGrande() {
+
+        given()
+                .log().all() //mostra parametros enviados
+                .multiPart("arquivo",new File("src/main/resources/file2"))
+                .when()
+                .post("https://restapi.wcaquino.me/upload")
+                .then()
+                .log().all()
+                .time(Matchers.lessThan(8000l))
+                .statusCode(413);
+    }
 }
