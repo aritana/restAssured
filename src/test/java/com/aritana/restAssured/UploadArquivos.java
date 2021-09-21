@@ -2,22 +2,8 @@ package com.aritana.restAssured;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
-
-import static io.restassured.RestAssured.given;
-
-import io.restassured.http.Method;
-import io.restassured.response.Response;
-import io.restassured.response.ValidatableResponse;
-import org.hamcrest.Matchers;
-import org.junit.jupiter.api.Test;
-
 import java.io.File;
-import java.util.Arrays;
-import java.util.List;
-
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
+import static io.restassured.RestAssured.given;
 public class UploadArquivos {
 
     @Test
@@ -31,8 +17,7 @@ public class UploadArquivos {
                 .then()
                 .log().all()
                 .statusCode(404)
-                .body("error",Matchers.is("Arquivo não enviado"))
-            ;
+                .body("error",Matchers.is("Arquivo não enviado"));
     }
 
     @Test
